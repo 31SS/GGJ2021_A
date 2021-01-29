@@ -14,7 +14,12 @@ public class GameMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //escキーでポーズメニューをアクティブ
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
 
+        }
     }
     //ポーズボタン
     public void ClickPause()
