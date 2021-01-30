@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using BodyNumber;
 using UnityEngine;
 
-public class TestBodyParts : MonoBehaviour, IPickupable
+public class TestLeftLeg : MonoBehaviour, IPickupable
 {
     public void PickedUp(PlayerController player)
     {
-        player.bodyParts[Define.RIGHTLEG].SetActive(true);
+        player.bodyParts[Define.LEFTLEG].SetActive(true);
         Destroy(gameObject);
     }
 }

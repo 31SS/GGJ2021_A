@@ -12,9 +12,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/TestBodyParts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/TestRightLeg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SS/Interface/IPickupable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/TestHead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftLeg.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -24,8 +26,18 @@
         <option value="$PROJECT_DIR$/Assets/SS/Interface/IPickupable.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestBodyParts.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" />
-        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/CameraEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Camera/monoTone.shader" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Camera/CameraEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightLeg.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftLeg.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestHead.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightEye.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftHand1.cs" />
       </list>
     </option>
   </component>
@@ -76,6 +88,7 @@
       <updated>1611942717181</updated>
       <workItem from="1611942720764" duration="4183000" />
       <workItem from="1611968370325" duration="10597000" />
+      <workItem from="1611987994259" duration="5780000" />
     </task>
     <servers />
   </component>

@@ -1115,12 +1115,22 @@
             <e p="IPickupable.cs" t="Include" />
           </e>
           <e p="Script" t="Include">
+            <e p="Camera" t="Include">
+              <e p="CameraEffect.cs" t="Include" />
+              <e p="monoTone.shader" t="Include" />
+            </e>
             <e p="Player" t="Include">
               <e p="BodyNumber.cs" t="Include" />
               <e p="PCharacterState.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerParameter.cs" t="Include" />
-              <e p="TestBodyParts.cs" t="Include" />
+              <e p="TestHead.cs" t="Include" />
+              <e p="TestLeftEye.cs" t="Include" />
+              <e p="TestLeftHand.cs" t="Include" />
+              <e p="TestLeftLeg.cs" t="Include" />
+              <e p="TestRightEye.cs" t="Include" />
+              <e p="TestRightHand.cs" t="Include" />
+              <e p="TestRightLeg.cs" t="Include" />
             </e>
           </e>
         </e>

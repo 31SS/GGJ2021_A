@@ -6,6 +6,7 @@ using CharacterState;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,11 +24,16 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private PlayerParameter playerParameter;
     
-    [SerializeField] protected Rigidbody2D m_rigidbody2D;
+    [SerializeField] private Rigidbody2D m_rigidbody2D;
     // [SerializeField] protected Animator m_animator;
-    [SerializeField] protected bool m_isGround/* { get; set; }*/;
-    [SerializeField] protected ContactFilter2D _groundFilter2D;
-
+    [SerializeField] private bool m_isGround/* { get; set; }*/;
+    [SerializeField] private ContactFilter2D _groundFilter2D;
+    [SerializeField] private Camera m_camera;
+    [SerializeField] private PostProcessVolume m_processManager;
+    [SerializeField] private PostProcessProfile lowViewableFieldProfile;
+    [SerializeField] private PostProcessProfile viewableFieldProfile;
+    [SerializeField] private PostProcessProfile highViewableFieldProfile;
+    
     private bool moveableFlag;
     private bool  highMoveableFlag;
     private bool  openableDoorFlag;
@@ -74,45 +80,8 @@ public class PlayerController : MonoBehaviour
         // m_animator.SetFloat("Horizontal", move);
         // m_animator.SetFloat("Vertical", m_rigidbody2D.velocity.y);
         // m_animator.SetBool("isGround", m_isGround);
-        m_isGround = m_rigidbody2D.IsTouching(_groundFilter2D);
-
-        // _playerMover.Move(NON_REVERSE, playerParameter.RUN_SPEED, _playerInput.X, m_isGround, m_animator);
-        if (moveableFlag || highMoveableFlag)
-        {
-            var _velosity = m_rigidbody2D.velocity;
-
-            m_rigidbody2D.velocity = highMoveableFlag
-                ? new Vector2(_x * playerParameter.HIGHRUN_SPEED, _velosity.y)
-                : new Vector2(_x * playerParameter.RUN_SPEED, _velosity.y);
-            if (m_isGround)
-            {
-                if (_jump)
-                {
-                    // m_animator.SetTrigger("Jump");
-                    if (highMoveableFlag)
-                    {
-                        m_rigidbody2D.AddForce(Vector2.up * playerParameter.HIGHJUMP_POWER);
-                    }
-                    else
-                    {
-                        m_rigidbody2D.AddForce(Vector2.up * playerParameter.JUMP_POWER);
-                    }
-
-                    StateProcessor.State.Value = StateAir;
-                }
-
-                else if (Mathf.Abs(_x) > 0)
-                {
-                    StateProcessor.State.Value = StateRun;
-                    var rot = transform.rotation;
-                    // transform.rotation = Quaternion.Euler(rot.x, Mathf.Sign(_playerInput.X) == 1 ? 0 : 180, rot.z);
-                }
-                else
-                {
-                    StateProcessor.State.Value = StateIdle;
-                }
-            }
-        }
+        Move(_x, _jump);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -157,6 +126,68 @@ public class PlayerController : MonoBehaviour
         this.UpdateAsObservable()
             .Where(_ => (bodyParts[Define.HEAD].activeSelf))
             .Subscribe(_ => hearableFlag = true);
+    }
+
+    private void Move(float x, bool jump)
+    {
+              m_isGround = m_rigidbody2D.IsTouching(_groundFilter2D);
+        
+        if (moveableFlag || highMoveableFlag)
+        {
+            var _velosity = m_rigidbody2D.velocity;
+
+            m_rigidbody2D.velocity = highMoveableFlag
+                ? new Vector2(x * playerParameter.HIGHRUN_SPEED, _velosity.y)
+                : new Vector2(x * playerParameter.RUN_SPEED, _velosity.y);
+            if (m_isGround)
+            {
+                if (jump)
+                {
+                    // m_animator.SetTrigger("Jump");
+                    if (highMoveableFlag)
+                    {
+                        m_rigidbody2D.AddForce(Vector2.up * playerParameter.HIGHJUMP_POWER);
+                    }
+                    else
+                    {
+                        m_rigidbody2D.AddForce(Vector2.up * playerParameter.JUMP_POWER);
+                    }
+
+                    StateProcessor.State.Value = StateAir;
+                }
+
+                else if (Mathf.Abs(x) > 0)
+                {
+                    StateProcessor.State.Value = StateRun;
+                    var rot = transform.rotation;
+                    // transform.rotation = Quaternion.Euler(rot.x, Mathf.Sign(_playerInput.X) == 1 ? 0 : 180, rot.z);
+                }
+                else
+                {
+                    StateProcessor.State.Value = StateIdle;
+                }
+            }
+        }
+        // else if(m_isGround)
+        // {
+        //     if (_jump)
+        //     {
+        //         // m_animator.SetTrigger("Jump");
+        //         m_rigidbody2D.AddForce(Vector2.up * playerParameter.LOWJUMP_POWER);
+        //         StateProcessor.State.Value = StateAir;
+        //     }
+        //
+        //     else if (Mathf.Abs(_x) > 0)
+        //     {
+        //         StateProcessor.State.Value = StateRun;
+        //         var rot = transform.rotation;
+        //         // transform.rotation = Quaternion.Euler(rot.x, Mathf.Sign(_playerInput.X) == 1 ? 0 : 180, rot.z);
+        //     }
+        //     else
+        //     {
+        //         StateProcessor.State.Value = StateIdle;
+        //     }
+        // }
     }
     
     public void Idle()
