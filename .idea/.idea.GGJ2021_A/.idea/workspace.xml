@@ -12,14 +12,20 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/TestBodyParts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Interface/IPickupable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/SS/Script/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PCharacterState.cs" />
-        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Interface/IPickupable.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestBodyParts.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" />
       </list>
     </option>
   </component>
@@ -69,6 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611942717181</updated>
       <workItem from="1611942720764" duration="4183000" />
+      <workItem from="1611968370325" duration="10597000" />
     </task>
     <servers />
   </component>
@@ -79,5 +86,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1611978528468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611978528468" />
   </component>
 </project>
