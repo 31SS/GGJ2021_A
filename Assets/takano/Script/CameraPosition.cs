@@ -29,14 +29,15 @@ public class CameraPosition : MonoBehaviour
             pos.GetComponent<PartsController>().isFocus = false;
         }
         //戻る
-        /*else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.X))
         {
             num--;
             if (num < 0)
             {
                 num=0;
             }
-        }*/
+            pos.GetComponent<PartsController>().isFocus = false;
+        }
         //プレハブのクローンオブジェクトを参照
         switch (num) 
         {
