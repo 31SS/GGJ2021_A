@@ -71,17 +71,23 @@ public class PartsController : MonoBehaviour
                 }
             }
 
-            Debug.Log("isJump " + isJump);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //仮　床と衝突したらisJumpをfalseにする
+        //床と衝突したら
+        /*
         if (collision.gameObject.name == "Floor")
         {
             isJump = false;
             animator.SetTrigger("idle");
         }
+        */
+
+        //なんでもぶつかったら
+        isJump = false;
+        animator.SetTrigger("idle");
+
     }
 }
