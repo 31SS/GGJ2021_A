@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private Rigidbody2D m_rigidbody2D;
     // [SerializeField] protected Animator m_animator;
-    [SerializeField] private bool m_isGround/* { get; set; }*/;
+    public bool m_isGround/* { get; set; }*/;
     [SerializeField] private ContactFilter2D _groundFilter2D;
 
     private bool moveableFlag;
