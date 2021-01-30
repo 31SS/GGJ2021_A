@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UniRx;
+using UniRx.Triggers;
 using System.Collections;
+using BodyNumber;
 
 public class CameraEffect : MonoBehaviour {
     
@@ -19,6 +22,14 @@ public class CameraEffect : MonoBehaviour {
     }
     private void Start()
     {
-        // m_processManager.profile = lowViewableFieldProfile;
+        m_processManager.profile = lowViewableFieldProfile;
+        
+        this.UpdateAsObservable()
+            .Where(_ => (wholeBody.bodyParts[Define.RIGHTEYE].activeSelf | wholeBody.bodyParts[Define.LEFTEYE].activeSelf))
+            .Subscribe(_ => m_processManager.profile = viewableFieldProfile);
+        
+        this.UpdateAsObservable()
+            .Where(_ => (wholeBody.bodyParts[Define.RIGHTEYE].activeSelf && wholeBody.bodyParts[Define.LEFTEYE].activeSelf))
+            .Subscribe(_ => m_processManager.profile = highViewableFieldProfile);
     }
 }

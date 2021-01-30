@@ -28,16 +28,16 @@
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/CameraEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Camera/monoTone.shader" />
-        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/SS/Script/Camera/CameraEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightLeg.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftLeg.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestHead.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightEye.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightHand.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftHand1.cs" />
-        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Camera/CameraEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" />
       </list>
     </option>
   </component>
@@ -88,7 +88,7 @@
       <updated>1611942717181</updated>
       <workItem from="1611942720764" duration="4183000" />
       <workItem from="1611968370325" duration="10597000" />
-      <workItem from="1611987994259" duration="6583000" />
+      <workItem from="1611987994259" duration="9122000" />
     </task>
     <servers />
   </component>
@@ -101,6 +101,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="52" y="93" width="930" height="1026" key="dock-window-1" timestamp="1611997526340">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="52" y="93" width="930" height="1026" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1611997526340" />
     <state x="1096" y="244" key="run.anything.popup" timestamp="1611978528468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
