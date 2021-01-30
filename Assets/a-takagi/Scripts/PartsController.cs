@@ -8,8 +8,10 @@ public class PartsController : MonoBehaviour
     public float JumpForce=5.0f;
     public bool canJump = false; //ジャンプできるオブジェクトはtrueにする ※基本すべてジャンプできる
     public bool isFocus = false; //選択してる時だけ動く
-    bool isJump = false;
 
+    public int HandNum = 0;
+
+    bool isJump = false;
     Animator animator;
     Rigidbody2D rb;
 
@@ -88,6 +90,28 @@ public class PartsController : MonoBehaviour
         //なんでもぶつかったら
         isJump = false;
         animator.SetTrigger("idle");
+
+        //片手で開けられるドア
+        if (collision.gameObject.tag == "doorOne")
+        {
+            if (HandNum > 0)
+            {
+                //ドアが空く
+                collision.gameObject.GetComponentInParent<DoorController>().DoorOpen();
+            }
+
+        }
+
+        //両手で開けるドア
+        if (collision.gameObject.tag == "doorTwo")
+        {
+            if (HandNum > 1)
+            {
+                //ドアが空く
+                collision.gameObject.GetComponentInParent<DoorController>().DoorOpen();
+            }
+
+        }
 
     }
 }
