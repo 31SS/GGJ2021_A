@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using BodyNumber;
 using UnityEngine;
 
-public class PickedupHead : MonoBehaviour, IPickupable
+public class PickedupHair : MonoBehaviour, IPickupable
 {
     public void PickedUp(PlayerController player)
     {
-        player.bodyParts[Define.HEAD].SetActive(true);
-        player.isHead = true;
+        player.bodyParts[Define.HAIR].SetActive(true);
         Destroy(gameObject);
     }
 }
