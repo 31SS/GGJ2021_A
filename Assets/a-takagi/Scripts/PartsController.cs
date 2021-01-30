@@ -10,10 +10,14 @@ public class PartsController : MonoBehaviour
     public bool isFocus = false; //選択してる時だけ動く
     bool isJump = false;
 
+    Animator animator;
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,7 +32,31 @@ public class PartsController : MonoBehaviour
             if (!isJump)
             {
                 //transform.Translate(dx * Speed, 0.0F, 0.0F);
-                GetComponent<Rigidbody2D>().AddForce(Vector2.right * Speed * dx, ForceMode2D.Force);
+                rb.AddForce(Vector2.right * Speed * dx, ForceMode2D.Force);
+                if (rb.velocity.x > 0.1)
+                {
+                    animator.SetTrigger("rightwalk");
+                }else if (rb.velocity.x < 0.1 && rb.velocity.x > -0.1)
+                {
+                    animator.SetTrigger("idle");
+                }
+                else
+                {
+                    animator.SetTrigger("leftwalk");
+                }
+            }
+            else
+            {
+                //空中にいる
+                if (rb.velocity.x < 0)
+                {
+                    animator.SetTrigger("leftjump");
+                }
+                else
+                {
+                    animator.SetTrigger("rightjump");
+                }
+
             }
 
             if (canJump)
@@ -38,10 +66,12 @@ public class PartsController : MonoBehaviour
                     if (!isJump)
                     {
                         isJump = true;
-                        GetComponent<Rigidbody2D>().AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+                        rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
                     }
                 }
             }
+
+            Debug.Log("isJump " + isJump);
         }
     }
 
@@ -51,6 +81,7 @@ public class PartsController : MonoBehaviour
         if (collision.gameObject.name == "Floor")
         {
             isJump = false;
+            animator.SetTrigger("idle");
         }
     }
 }
