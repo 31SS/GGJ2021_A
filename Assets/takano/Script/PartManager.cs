@@ -18,7 +18,7 @@ public class PartManager : MonoBehaviour
         {
             Instantiate(parts[i], spawnPoints[i].transform.position, transform.rotation);
         }
-        Instantiate(part, new Vector3(70,20,0), transform.rotation);
+        Instantiate(part, new Vector3(50,0,0), transform.rotation);
         Instantiate(body, new Vector3(0, 0, 0), transform.rotation);
     }
 

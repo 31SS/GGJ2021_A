@@ -92,7 +92,7 @@ public class CameraPosition : MonoBehaviour
         }
         
         //参照したオブジェクトに追従
-        this.transform.position = new Vector3(pos.transform.position.x, pos.transform.position.y + 8, -10);
+        this.transform.position = new Vector3(pos.transform.position.x, pos.transform.position.y+5, -10);
         
     }
 }
