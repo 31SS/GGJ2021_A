@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         StateRun.ExecAction = Run;
         StateAir.ExecAction = Air;
         StateOver.ExecAction = Over;
+        inisActionFlag();
     }
     private void Start()
     {
@@ -62,7 +63,6 @@ public class PlayerController : MonoBehaviour
             })
             .AddTo(this);
         
-        inisActionFlag();
         // this.UpdateAsObservable()
         //     .Where(_ => (bodyParts[Define.RIGHTLEG].activeSelf || bodyParts[Define.LEFTLEG].activeSelf))
         //     .Subscribe(_ => jumpableFlag = true);
@@ -168,26 +168,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        // else if(m_isGround)
-        // {
-        //     if (_jump)
-        //     {
-        //         // m_animator.SetTrigger("Jump");
-        //         m_rigidbody2D.AddForce(Vector2.up * playerParameter.LOWJUMP_POWER);
-        //         StateProcessor.State.Value = StateAir;
-        //     }
-        //
-        //     else if (Mathf.Abs(_x) > 0)
-        //     {
-        //         StateProcessor.State.Value = StateRun;
-        //         var rot = transform.rotation;
-        //         // transform.rotation = Quaternion.Euler(rot.x, Mathf.Sign(_playerInput.X) == 1 ? 0 : 180, rot.z);
-        //     }
-        //     else
-        //     {
-        //         StateProcessor.State.Value = StateIdle;
-        //     }
-        // }
     }
     
     public void Idle()
