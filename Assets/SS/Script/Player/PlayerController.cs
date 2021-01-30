@@ -10,6 +10,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isFocus = false; //選択してる時だけ動く
     //変更前のステート名
     private string _prevStateName;
     
@@ -74,12 +75,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        var _x = Input.GetAxis("Horizontal");
-        var _jump = Input.GetButton("Jump");
-        // m_animator.SetFloat("Horizontal", move);
-        // m_animator.SetFloat("Vertical", m_rigidbody2D.velocity.y);
-        // m_animator.SetBool("isGround", m_isGround);
-        Move(_x, _jump);
+        if (isFocus)
+        {
+            var _x = Input.GetAxis("Horizontal");
+            var _jump = Input.GetButton("Jump");
+            // m_animator.SetFloat("Horizontal", move);
+            // m_animator.SetFloat("Vertical", m_rigidbody2D.velocity.y);
+            // m_animator.SetBool("isGround", m_isGround);
+            Move(_x, _jump);
+        }
         
     }
 
