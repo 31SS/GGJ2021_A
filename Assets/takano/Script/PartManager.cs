@@ -7,6 +7,7 @@ public class PartManager : MonoBehaviour
     public GameObject[] parts; //アイテムプレハブ
     public GameObject[] spawnPoints;　//スポーン位置
     public GameObject part;
+    public GameObject body;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class PartManager : MonoBehaviour
             Instantiate(parts[i], spawnPoints[i].transform.position, transform.rotation);
         }
         Instantiate(part, new Vector3(70,20,0), transform.rotation);
+        Instantiate(body, new Vector3(0, 0, 0), transform.rotation);
     }
 
     // Update is called once per frame
