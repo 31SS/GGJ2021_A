@@ -10,6 +10,7 @@
       <e p="Assets" t="Include">
         <e p="a-takagi" t="Include">
           <e p="Scripts" t="Include">
+            <e p="DoorController.cs" t="Include" />
             <e p="PartsController.cs" t="Include" />
           </e>
         </e>
@@ -1135,15 +1136,15 @@
             <e p="Player" t="Include">
               <e p="BodyNumber.cs" t="Include" />
               <e p="PCharacterState.cs" t="Include" />
+              <e p="PickedupHead.cs" t="Include" />
+              <e p="PickedupLeftEye.cs" t="Include" />
+              <e p="PickedUpLeftHand.cs" t="Include" />
+              <e p="PickedupLeftLeg.cs" t="Include" />
+              <e p="PickedupRightEye.cs" t="Include" />
+              <e p="PickedupRightHand.cs" t="Include" />
+              <e p="PickedupRightLeg.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerParameter.cs" t="Include" />
-              <e p="TestHead.cs" t="Include" />
-              <e p="TestLeftEye.cs" t="Include" />
-              <e p="TestLeftHand.cs" t="Include" />
-              <e p="TestLeftLeg.cs" t="Include" />
-              <e p="TestRightEye.cs" t="Include" />
-              <e p="TestRightHand.cs" t="Include" />
-              <e p="TestRightLeg.cs" t="Include" />
             </e>
           </e>
         </e>

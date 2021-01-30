@@ -28,15 +28,11 @@ public class PlayerController : MonoBehaviour
     // [SerializeField] protected Animator m_animator;
     [SerializeField] private bool m_isGround/* { get; set; }*/;
     [SerializeField] private ContactFilter2D _groundFilter2D;
-    [SerializeField] private Camera m_camera;
-    [SerializeField] private PostProcessVolume m_processManager;
-    [SerializeField] private PostProcessProfile lowViewableFieldProfile;
-    [SerializeField] private PostProcessProfile viewableFieldProfile;
-    [SerializeField] private PostProcessProfile highViewableFieldProfile;
-    
+
     private bool moveableFlag;
     private bool  highMoveableFlag;
     private bool  openableDoorFlag;
+    private bool  highOpenableDoorFlag;
     private bool  viewableFieldFlag;
     private bool highViewableFieldFlag;
     private bool  hearableFlag;
@@ -47,6 +43,9 @@ public class PlayerController : MonoBehaviour
         StateRun.ExecAction = Run;
         StateAir.ExecAction = Air;
         StateOver.ExecAction = Over;
+        
+        //パーツの集まり具合でフラグをオンにして、歩行や視界を広くする等の機能を増やしていく
+        //この関数はパーツが集まったらできる機能を増やすためのフラグを動作させるもの
         inisActionFlag();
     }
     private void Start()
@@ -84,15 +83,42 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        var pickupable = other.GetComponent<IPickupable>();
+        var pickupable = other.gameObject.GetComponent<IPickupable>();
         if (pickupable != null)
         {
             pickupable.PickedUp(this);
             Debug.Log("Caught");
         }
+        
+        //なんでもぶつかったら
+        // isJump = false;
+        // animator.SetTrigger("idle");
+
+        //片手で開けられるドア
+        if (other.gameObject.tag == "doorOne")
+        {
+            if (openableDoorFlag)
+            {
+                //ドアが空く
+                other.gameObject.GetComponentInParent<DoorController>().DoorOpen();
+            }
+
+        }
+
+        //両手で開けるドア
+        if (other.gameObject.tag == "doorTwo")
+        {
+            if (highOpenableDoorFlag)
+            {
+                //ドアが空く
+                other.gameObject.GetComponentInParent<DoorController>().DoorOpen();
+            }
+
+        }
     }
+
 
     private void inisActionFlag()
     {
@@ -102,7 +128,7 @@ public class PlayerController : MonoBehaviour
         viewableFieldFlag = false;
         highViewableFieldFlag = false;
         hearableFlag = false;
-
+        
         this.UpdateAsObservable()
             .Where(_ => (bodyParts[Define.RIGHTLEG].activeSelf || bodyParts[Define.LEFTLEG].activeSelf))
             .Subscribe(_ => moveableFlag = true);
@@ -114,6 +140,10 @@ public class PlayerController : MonoBehaviour
         this.UpdateAsObservable()
             .Where(_ => (bodyParts[Define.RIGHTHAND].activeSelf || bodyParts[Define.LEFTHAND].activeSelf))
             .Subscribe(_ => openableDoorFlag = true);
+        
+        this.UpdateAsObservable()
+            .Where(_ => (bodyParts[Define.RIGHTHAND].activeSelf && bodyParts[Define.LEFTHAND].activeSelf))
+            .Subscribe(_ => highOpenableDoorFlag = true);
         
         this.UpdateAsObservable()
             .Where(_ => (bodyParts[Define.RIGHTEYE].activeSelf || bodyParts[Define.LEFTEYE].activeSelf))
@@ -130,11 +160,11 @@ public class PlayerController : MonoBehaviour
 
     private void Move(float x, bool jump)
     {
-              m_isGround = m_rigidbody2D.IsTouching(_groundFilter2D);
+        m_isGround = m_rigidbody2D.IsTouching(_groundFilter2D);
+        var _velosity = m_rigidbody2D.velocity;
         
         if (moveableFlag || highMoveableFlag)
         {
-            var _velosity = m_rigidbody2D.velocity;
 
             m_rigidbody2D.velocity = highMoveableFlag
                 ? new Vector2(x * playerParameter.HIGHRUN_SPEED, _velosity.y)
@@ -167,6 +197,28 @@ public class PlayerController : MonoBehaviour
                     StateProcessor.State.Value = StateIdle;
                 }
             }
+        }
+        else
+        {
+            m_rigidbody2D.velocity = new Vector2(x * playerParameter.LOWRUN_SPEED, _velosity.y);
+            if (m_isGround)
+            {
+                if (jump)
+                {
+                    // m_animator.SetTrigger("Jump");
+                    m_rigidbody2D.AddForce(Vector2.up * playerParameter.LOWJUMP_POWER);
+                    StateProcessor.State.Value = StateAir;
+                }
+
+                else if (Mathf.Abs(x) > 0)
+                {
+                    StateProcessor.State.Value = StateRun;
+                }
+                else
+                {
+                    StateProcessor.State.Value = StateIdle;
+                }
+            }   
         }
     }
     

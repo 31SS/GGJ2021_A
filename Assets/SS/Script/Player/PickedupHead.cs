@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using BodyNumber;
 using UnityEngine;
 
-public class TestHead : MonoBehaviour, IPickupable
+public class PickedupHead : MonoBehaviour, IPickupable
 {
     public void PickedUp(PlayerController player)
     {
