@@ -205,7 +205,7 @@ MonoBehaviour:
   JumpForce: 5
   canJump: 1
   isFocus: 0
-  HandNum: 0
+  HandNum: 1
 --- !u!61 &4886172695758627096
 BoxCollider2D:
   m_ObjectHideFlags: 0
