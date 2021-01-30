@@ -124,7 +124,6 @@ MonoBehaviour:
   JumpForce: 5
   canJump: 1
   isFocus: 0
-
   HandNum: 1
 --- !u!61 &595006635885747972
 BoxCollider2D:
