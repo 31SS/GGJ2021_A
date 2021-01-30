@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeCounter : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class TimeCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        minute = 6;
+        minute = 7;
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class TimeCounter : MonoBehaviour
             timeText.text = "朝になりました";
 
             //GameOverのリザルト画面へ
-
+            //SceneManager.LoadScene("GameOver");
         }
     }
 }
