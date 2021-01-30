@@ -8,6 +8,11 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="a-takagi" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="PartsController.cs" t="Include" />
+          </e>
+        </e>
         <e p="Doozy" t="Include">
           <e p="Editor" t="Include">
             <e p="Drawers" t="Include">
@@ -815,6 +820,14 @@
           </e>
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="K.Isobe" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CreditScripts.cs" t="Include" />
+            <e p="GameClearScripts.cs" t="Include" />
+            <e p="GameOver1Scripts.cs" t="Include" />
+            <e p="titleScripts.cs" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -1135,7 +1148,13 @@
           </e>
         </e>
         <e p="takano" t="Include">
-          <e p="GameMenu.cs" t="Include" />
+          <e p="Script" t="Include">
+            <e p="CameraPosition.cs" t="Include" />
+            <e p="GameMenu.cs" t="Include" />
+            <e p="PartManager.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="TimeCounter.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="GGJ2021_A.sln" t="IncludeFlat" />
