@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 6712783660609234905}
   - component: {fileID: 6712783660609234900}
   - component: {fileID: 1654675387}
+  - component: {fileID: 126750997119771233}
   m_Layer: 0
   m_Name: rightleg
   m_TagString: Untagged
@@ -343,6 +344,7 @@ MonoBehaviour:
   JumpForce: 7
   canJump: 1
   isFocus: 0
+  HandNum: 0
 --- !u!95 &1654675387
 Animator:
   serializedVersion: 3
@@ -362,3 +364,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &126750997119771233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712783660609234907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e8b35b7d7b1314497beda5a3abfc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 595006635885747973}
   - component: {fileID: 595006635885747972}
   - component: {fileID: 6413363641215269608}
+  - component: {fileID: 21174883866081685}
   m_Layer: 0
   m_Name: lefthand
   m_TagString: Untagged
@@ -123,6 +124,7 @@ MonoBehaviour:
   JumpForce: 5
   canJump: 1
   isFocus: 0
+  HandNum: 0
 --- !u!61 &595006635885747972
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,6 +170,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &21174883866081685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595006635885747974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c4cb7e605ae0f4eb6e85f5395239aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720332245587607439
 GameObject:
   m_ObjectHideFlags: 0
