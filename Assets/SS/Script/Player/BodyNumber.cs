@@ -12,6 +12,6 @@ namespace BodyNumber
         public const int LEFTHAND = 4;
         public const int RIGHTLEG = 5;
         public const int LEFTLEG = 6;
-        public const int HARE = 7;
+        public const int HAIR = 7;
     }
 }

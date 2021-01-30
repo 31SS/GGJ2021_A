@@ -35,9 +35,9 @@
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestRightHand.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftHand1.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/TestLeftHand.cs" />
-        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Camera/CameraEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" />
       </list>
     </option>
   </component>
@@ -88,7 +88,7 @@
       <updated>1611942717181</updated>
       <workItem from="1611942720764" duration="4183000" />
       <workItem from="1611968370325" duration="10597000" />
-      <workItem from="1611987994259" duration="7858000" />
+      <workItem from="1611987994259" duration="9122000" />
     </task>
     <servers />
   </component>
