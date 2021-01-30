@@ -7,8 +7,6 @@ public class PartManager : MonoBehaviour
     public GameObject[] parts; //アイテムプレハブ
     public GameObject[] spawnPoints;　//スポーン位置
 
-    public GameObject camera;
-    int num=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +21,7 @@ public class PartManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            num++;
-            if (num > 6)
-            {
-                num = 0;
-            }
-        }
-        Debug.Log(num);
-        camera.transform.position= new Vector3(parts[num].transform.position.x, 0, -10);
+
     }
  
     void Shuffle(GameObject[] num)
