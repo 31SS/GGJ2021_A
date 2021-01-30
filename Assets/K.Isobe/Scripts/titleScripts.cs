@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class titleScripts : MonoBehaviour
+public class TitleScripts : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,12 +15,42 @@ public class titleScripts : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
 
             SceneManager.LoadScene("mainScene");
 
         }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+
+            Quit();
+
+        }
+
     }
+
+    public void play()
+    {
+
+        SceneManager.LoadScene("mainScene");
+
+    }
+
+    public void Quit()
+    {
+
+        UnityEditor.EditorApplication.isPlaying = false;
+        UnityEngine.Application.Quit();
+
+    }
+
+    public void loadCreditDown()
+    {
+
+        SceneManager.LoadScene("Credit");
+
+    }
+
 }
