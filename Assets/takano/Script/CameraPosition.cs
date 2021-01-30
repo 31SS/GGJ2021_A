@@ -21,7 +21,7 @@ public class CameraPosition : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             num++;
-            if (num > 6)
+            if (num > 5)
             {
                 num = 0;
             }
@@ -41,13 +41,12 @@ public class CameraPosition : MonoBehaviour
         //プレハブのクローンオブジェクトを参照
         switch (num) 
         {
-            case 0: pos = GameObject.Find("head(Clone)");break;
-            case 1: pos = GameObject.Find("rightleg(Clone)"); break;
-            case 2: pos = GameObject.Find("leftleg(Clone)"); break;
-            case 3: pos = GameObject.Find("lefteye(Clone)"); break;
-            case 4: pos = GameObject.Find("righteye(Clone)"); break;
-            case 5: pos = GameObject.Find("righthand(Clone)"); break;
-            case 6: pos = GameObject.Find("lefthand(Clone)"); break;
+            case 0: pos = GameObject.Find("rightleg(Clone)"); break;
+            case 1: pos = GameObject.Find("leftleg(Clone)"); break;
+            case 2: pos = GameObject.Find("lefteye(Clone)"); break;
+            case 3: pos = GameObject.Find("righteye(Clone)"); break;
+            case 4: pos = GameObject.Find("righthand(Clone)"); break;
+            case 5: pos = GameObject.Find("lefthand(Clone)"); break;
             default:
                 break;
         }

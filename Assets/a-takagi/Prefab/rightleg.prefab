@@ -343,6 +343,7 @@ MonoBehaviour:
   JumpForce: 7
   canJump: 1
   isFocus: 0
+  HandNum: 1
 --- !u!95 &1654675387
 Animator:
   serializedVersion: 3
