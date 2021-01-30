@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
     public bool m_isGround/* { get; set; }*/;
     [SerializeField] private ContactFilter2D _groundFilter2D;
 
+    //目をゲットしたかどうか
+    public bool isRightEye = false;
+    public bool isLeftEye = false;
+    public bool isHead = false;
+
     private bool moveableFlag;
     private bool  highMoveableFlag;
     private bool  openableDoorFlag;
@@ -244,4 +249,5 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+
 }

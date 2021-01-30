@@ -7,7 +7,11 @@ public class PickedupLeftEye : MonoBehaviour, IPickupable
 {
     public void PickedUp(PlayerController player)
     {
-        player.bodyParts[Define.LEFTEYE].SetActive(true);
-        Destroy(gameObject);
+        if (player.isHead)
+        {
+            player.bodyParts[Define.LEFTEYE].SetActive(true);
+            player.isLeftEye = true;
+            Destroy(gameObject);
+        }
     }
 }
