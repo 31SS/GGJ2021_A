@@ -7,7 +7,12 @@ public class PickedupHair : MonoBehaviour, IPickupable
 {
     public void PickedUp(PlayerController player)
     {
-        player.bodyParts[Define.HAIR].SetActive(true);
-        Destroy(gameObject);
+        if (player.isHead)
+        {
+            player.bodyParts[Define.HAIR].SetActive(true);
+            Destroy(gameObject);
+            player.isHair = true;
+            Destroy(gameObject);
+        }
     }
 }

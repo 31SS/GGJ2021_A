@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public bool isRightEye = false;
     public bool isLeftEye = false;
     public bool isHead = false;
+    public bool isHair = false;
 
     private bool moveableFlag;
     private bool  highMoveableFlag;
