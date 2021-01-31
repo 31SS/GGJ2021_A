@@ -1151,6 +1151,10 @@
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerParameter.cs" t="Include" />
             </e>
+            <e p="SceneTransition" t="Include">
+              <e p="QuitGame.cs" t="Include" />
+              <e p="SceneMover.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="takano" t="Include">
