@@ -21,8 +21,8 @@ public class ClearScene : MonoBehaviour
         if (other.gameObject.CompareTag("Body"))
         {
             //GameClearシーンへ
-            //SceneManager.LoadScene("GameClear1");
-            Debug.Log("clear");
+            SceneManager.LoadScene("GameClear1");
         }
+
     }
 }

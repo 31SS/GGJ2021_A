@@ -35,4 +35,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("mainScene");
         Time.timeScale = 1f;
     }
+    //タイトルへ
+    public void ClickTitle()
+    {
+        gameObject.SetActive(false);
+        SceneManager.LoadScene("Title");
+        Time.timeScale = 1f;
+    }
 }

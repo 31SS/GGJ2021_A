@@ -61,12 +61,13 @@ public class CameraPosition : MonoBehaviour
         switch (num) 
         {
             case 0: pos = GameObject.Find("MainWholeBody(Clone)"); break;
-            case 1: if(GameObject.Find("rightleg(Clone)")!=null)pos = GameObject.Find("rightleg(Clone)"); break;
-            case 2: if (GameObject.Find("leftleg(Clone)") != null) pos = GameObject.Find("leftleg(Clone)"); break;
-            case 3: if (GameObject.Find("lefteye(Clone)") != null) pos = GameObject.Find("lefteye(Clone)"); break;
-            case 4: if (GameObject.Find("righteye(Clone)") != null) pos = GameObject.Find("righteye(Clone)"); break;
-            case 5: if (GameObject.Find("righthand(Clone)") != null) pos = GameObject.Find("righthand(Clone)"); break;
-            case 6: if (GameObject.Find("lefthand(Clone)") != null) pos = GameObject.Find("lefthand(Clone)"); break;
+            case 1: if (GameObject.Find("head(Clone)") != null) pos = GameObject.Find("head(Clone)"); break;
+            case 2: if(GameObject.Find("rightleg(Clone)")!=null)pos = GameObject.Find("rightleg(Clone)"); break;
+            case 3: if (GameObject.Find("leftleg(Clone)") != null) pos = GameObject.Find("leftleg(Clone)"); break;
+            case 4: if (GameObject.Find("lefteye(Clone)") != null) pos = GameObject.Find("lefteye(Clone)"); break;
+            case 5: if (GameObject.Find("righteye(Clone)") != null) pos = GameObject.Find("righteye(Clone)"); break;
+            case 6: if (GameObject.Find("righthand(Clone)") != null) pos = GameObject.Find("righthand(Clone)"); break;
+            case 7: if (GameObject.Find("lefthand(Clone)") != null) pos = GameObject.Find("lefthand(Clone)"); break;
             default:
                 
                 break;
