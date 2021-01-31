@@ -18,10 +18,11 @@ public class CameraEffect : MonoBehaviour {
 
     private void Awake()
     {
-        wholeBody = GameObject.FindWithTag("Body").GetComponent<PlayerController>();
+        
     }
     private void Start()
     {
+        wholeBody = GameObject.FindWithTag("Body").GetComponent<PlayerController>();
         m_processManager.profile = lowViewableFieldProfile;
         
         this.UpdateAsObservable()

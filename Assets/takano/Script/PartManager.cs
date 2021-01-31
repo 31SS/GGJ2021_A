@@ -8,9 +8,7 @@ public class PartManager : MonoBehaviour
     public GameObject[] spawnPoints;　//スポーン位置
     public GameObject part;
     public GameObject body;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         //パーツの順番をシャッフル
         Shuffle(parts);
@@ -18,8 +16,13 @@ public class PartManager : MonoBehaviour
         {
             Instantiate(parts[i], spawnPoints[i].transform.position, transform.rotation);
         }
-        Instantiate(part, new Vector3(50,0,0), transform.rotation);
+        Instantiate(part, new Vector3(50, 0, 0), transform.rotation);
         Instantiate(body, new Vector3(0, 0, 0), transform.rotation);
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
