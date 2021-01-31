@@ -15,11 +15,15 @@ public class PartsController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
 
+    SoundManager sm;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
