@@ -7,7 +7,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
 
     string[] BGMFileName = new string[]
     {
-
+        "Carousel",//タイトル
+        "Kumo",//プレイ中（通常）
+        "ゴシック・ナイト",//プレイ中（終盤）
+        "se_maoudamashii_jingle01",//ゲームクリア（true）
+        "se_maoudamashii_jingle02"//ゲームクリア（true以外）
     };
 
     string[] SEFileName = new string[]
@@ -51,23 +55,20 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         }
         switch (name)
         {
-            case "カーソル移動3":
-                i = 0;//移動
+            case "Carousel":
+                i = 0;//タイトル
                 break;
-            case "ドアを閉める2":
-                i = 1;//ドア開閉
+            case "Kumo":
+                i = 1;//プレイ中（通常）
                 break;
-            case "決定、ボタン押下32":
-                i = 2;//人形合体
+            case "ゴシック・ナイト":
+                i = 2;//プレイ中（終盤）
                 break;
-            case "se_maoudamashii_se_fall02":
-                i = 3;//ジャンプ
+            case "se_maoudamashii_jingle01":
+                i = 3;//ゲームクリア（true）
                 break;
-            case "se_maoudamashii_system37":
-                i = 4; //システム音（決定）
-                break;
-            case "se_maoudamashii_system08":
-                i = 5;//システム音（キャンセル）
+            case "se_maoudamashii_jingle02":
+                i = 4;//ゲームクリア（true以外）
                 break;
             default:
                 i = 0;
