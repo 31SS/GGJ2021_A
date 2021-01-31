@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/K.Isobe/Scenes/Title.unity
+    guid: 31f9ad21d65883243983a902f12872ec
+  - enabled: 1
+    path: Assets/takano/mainScene.unity
+    guid: 3b104c6518df76940968e2783caa268b
+  - enabled: 1
+    path: Assets/K.Isobe/Scenes/GameOver.unity
+    guid: d9c07d8d8d070cd4a86f692efaf613bb
+  - enabled: 1
+    path: Assets/K.Isobe/Scenes/GameClear1.unity
+    guid: 26fb11242146615428938bd5b603cfbc
+  - enabled: 1
+    path: Assets/K.Isobe/Scenes/GameClear2.unity
+    guid: 9179c3eec5f6ba543957298b8ed4b0e3
+  - enabled: 1
+    path: Assets/K.Isobe/Scenes/Credit.unity
+    guid: 6bebffafa80b05f48b2cc120d3eec17a
   m_configObjects: {}

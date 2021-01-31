@@ -21,7 +21,7 @@ public class CameraPosition : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             num++;
-            if (num > 6)
+            if (num > 8)
             {
                 num = 0;
             }
@@ -68,6 +68,7 @@ public class CameraPosition : MonoBehaviour
             case 5: if (GameObject.Find("righteye(Clone)") != null) pos = GameObject.Find("righteye(Clone)"); break;
             case 6: if (GameObject.Find("righthand(Clone)") != null) pos = GameObject.Find("righthand(Clone)"); break;
             case 7: if (GameObject.Find("lefthand(Clone)") != null) pos = GameObject.Find("lefthand(Clone)"); break;
+            case 8: if (GameObject.Find("hair(Clone)") != null) pos = GameObject.Find("hair(Clone)"); break;
             default:
                 
                 break;
