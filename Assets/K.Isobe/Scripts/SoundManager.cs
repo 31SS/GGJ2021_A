@@ -50,6 +50,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             case "GameClear2":
                 SEPlay("se_maoudamashii_jingle02");
                 break;
+            case "GameOver":
+                SEPlay("se_maoudamashii_jingle02");
+                break;
             default:
                 break;
         }
