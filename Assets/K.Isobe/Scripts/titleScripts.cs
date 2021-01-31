@@ -41,7 +41,6 @@ public class TitleScripts : MonoBehaviour
     public void Quit()
     {
 
-        UnityEditor.EditorApplication.isPlaying = false;
         UnityEngine.Application.Quit();
 
     }
