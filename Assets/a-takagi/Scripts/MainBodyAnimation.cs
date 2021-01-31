@@ -40,7 +40,7 @@ public class MainBodyAnimation : MonoBehaviour
         float dy = Input.GetAxis("Vertical");
 
 
-        Debug.Log(bc.offset.y);
+        //Debug.Log(bc.offset.y);
         isJump = !pc.m_isGround;
         //空中でなければ、横移動する
         if (!isJump)
