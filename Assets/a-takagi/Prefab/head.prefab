@@ -195,6 +195,7 @@ MonoBehaviour:
   - {fileID: 3048122324524787534}
   bodymark: {fileID: 672123066171071241}
   goalmark: {fileID: 5259145380842065099}
+  ladarCanvas: {fileID: 6363105668837412658}
 --- !u!1001 &3611751071200217049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,6 +315,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c64b2a0e7115b0449c86faaa0c14bb6, type: 3}
+--- !u!1 &6363105668837412658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7661131568187082987, guid: 5c64b2a0e7115b0449c86faaa0c14bb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3611751071200217049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2784847717450971653 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1493576905083747804, guid: 5c64b2a0e7115b0449c86faaa0c14bb6,
