@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : SingletonMonoBehaviour<SoundManager>
 {
@@ -33,6 +34,25 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     void Start()
     {
         audio = GetComponent<AudioSource>();
+
+        //シーン名に応じて
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Title":
+                SelectBGM("Carousel");
+                break;
+            case "mainScene":
+                SelectBGM("Kumo");
+                break;
+            case "GameClear1":
+                SEPlay("se_maoudamashii_jingle01");
+                break;
+            case "GameClear2":
+                SEPlay("se_maoudamashii_jingle02");
+                break;
+            default:
+                break;
+        }
     }
 
     public void BGMPlay()
