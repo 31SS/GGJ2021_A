@@ -18,7 +18,7 @@ public class MainBodyAnimation : MonoBehaviour
     public Sprite LeftHeadSprite;
     public Sprite BothHeadSprite;
 
-
+    BoxCollider2D bc;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,8 @@ public class MainBodyAnimation : MonoBehaviour
         pc = GetComponent<PlayerController>();
 
         //当たり判定　服の位置
-        //GetComponent<BoxCollider2D>().Offset.y = -2.5;
+        bc = GetComponent<BoxCollider2D>();
+        bc.offset = new Vector2(0f,-2.5f);
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class MainBodyAnimation : MonoBehaviour
         float dy = Input.GetAxis("Vertical");
 
 
-        Debug.Log(rb.velocity.x);
+        Debug.Log(bc.offset.y);
         isJump = !pc.m_isGround;
         //空中でなければ、横移動する
         if (!isJump)
@@ -152,4 +153,11 @@ public class MainBodyAnimation : MonoBehaviour
 
     }
 
+    public void GetLeg()
+    {
+        //ボディを上に動かす（でないと床をすり抜けてします）
+        transform.Translate(Vector2.up * 3);
+        //当たり判定を足の位置に
+        bc.offset = new Vector2(0f, -4.5f);
+    }
 }
