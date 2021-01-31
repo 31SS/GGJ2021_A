@@ -8,6 +8,7 @@ public class PickedupLeftLeg : MonoBehaviour, IPickupable
     public void PickedUp(PlayerController player)
     {
         player.bodyParts[Define.LEFTLEG].SetActive(true);
+        player.isLeg = true;
         Destroy(gameObject);
     }
 }
