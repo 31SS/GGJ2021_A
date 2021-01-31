@@ -7,9 +7,12 @@ public class DoorController : MonoBehaviour
     public GameObject DoorOpenObj;
     public GameObject DoorCloseObj;
 
+    SoundManager sm;
+
     // Start is called before the first frame update
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         DoorClose();
     }
 
@@ -23,6 +26,9 @@ public class DoorController : MonoBehaviour
     {
         DoorOpenObj.SetActive(true);
         DoorCloseObj.SetActive(false);
+
+        sm.SEPlay("ドアを閉める2");
+
     }
     public void DoorClose()
     {
