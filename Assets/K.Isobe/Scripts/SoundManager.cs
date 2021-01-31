@@ -9,9 +9,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         "Carousel",//タイトル
         "Kumo",//プレイ中（通常）
-        "ゴシック・ナイト",//プレイ中（終盤）
-        "se_maoudamashii_jingle01",//ゲームクリア（true）
-        "se_maoudamashii_jingle02"//ゲームクリア（true以外）
+        "ゴシック・ナイト"//プレイ中（終盤）
     };
 
     string[] SEFileName = new string[]
@@ -21,7 +19,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         "決定、ボタン押下32",//人形合体
         "se_maoudamashii_se_fall02",//ジャンプ
         "se_maoudamashii_system37",//システム音（決定）
-        "se_maoudamashii_system08"//システム音（キャンセル）
+        "se_maoudamashii_system08",//システム音（キャンセル）
+        "se_maoudamashii_jingle01",//ゲームクリア（true）
+        "se_maoudamashii_jingle02"//ゲームクリア（true以外）
     };
     private AudioSource audio;
 
@@ -64,12 +64,6 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             case "ゴシック・ナイト":
                 i = 2;//プレイ中（終盤）
                 break;
-            case "se_maoudamashii_jingle01":
-                i = 3;//ゲームクリア（true）
-                break;
-            case "se_maoudamashii_jingle02":
-                i = 4;//ゲームクリア（true以外）
-                break;
             default:
                 i = 0;
                 break;
@@ -78,7 +72,16 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         {
             i = BGMFileName.Length - 1;
         }
-        audio.clip = Resources.Load("Sound/BGM/" + BGMFileName[i]) as AudioClip;
+        AudioClip tmp;
+        tmp = Resources.Load("Sound/BGM/" + BGMFileName[i]) as AudioClip;
+        if (!tmp)
+        {
+            Debug.Log("Sound/BGM/" + BGMFileName[i] + " is Missing");
+        }
+        else
+        {
+            audio.clip = tmp;
+        }
         BGMPlay();
     }
 
@@ -110,6 +113,12 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             case "se_maoudamashii_system08":
                 i = 5;//システム音（キャンセル）
                 break;
+            case "se_maoudamashii_jingle01":
+                i = 6;//ゲームクリア（true）
+                break;
+            case "se_maoudamashii_jingle02":
+                i = 7;//ゲームクリア（true以外）
+                break;
             default:
                 i = 0;
                 break;
@@ -121,6 +130,10 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         Debug.Log("aa");
         AudioClip tmp;
         tmp = Resources.Load("Sound/SE/" + SEFileName[i]) as AudioClip;
+        if (!tmp)
+        {
+            Debug.Log(name + " is Missing");
+        }
         audio.PlayOneShot(tmp);
     }
 }
