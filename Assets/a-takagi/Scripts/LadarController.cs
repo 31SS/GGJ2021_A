@@ -25,6 +25,7 @@ public class LadarController : MonoBehaviour
     public GameObject[] ladarmark = new GameObject[7];
     public GameObject bodymark;
     public GameObject goalmark;
+    public GameObject ladarCanvas; //レーダー用Canvas
 
     // Start is called before the first frame update
     void Start()
@@ -55,10 +56,39 @@ public class LadarController : MonoBehaviour
     {
         Vector3 kyori;
 
+        //レーダーの表示非表示
+        if (this.gameObject.GetComponent<PartsController>())
+        {
+            if (this.gameObject.GetComponent<PartsController>().isFocus)
+            {
+                ladarCanvas.SetActive(true);
+            }
+            else
+            {
+                ladarCanvas.SetActive(false);
+            }
+
+        }
+        if (this.gameObject.GetComponent<PlayerController>())
+        {
+            if (this.gameObject.GetComponent<PlayerController>().isFocus)
+            {
+                ladarCanvas.SetActive(true);
+            }
+            else
+            {
+                ladarCanvas.SetActive(false);
+            }
+
+        }
+
         //ゴールの位置
-        kyori = goalObj.transform.position-this.transform.position;
-        //Debug.Log(kyori);
-        goalmark.GetComponent<RectTransform>().anchoredPosition = kyori*5f;
+        if (goalObj) 
+        {
+            kyori = goalObj.transform.position - this.transform.position;
+            //Debug.Log(kyori);
+            goalmark.GetComponent<RectTransform>().anchoredPosition = kyori * 5f;
+        }
 
         //体の位置
         if (this.gameObject.name==bodyObjName)
