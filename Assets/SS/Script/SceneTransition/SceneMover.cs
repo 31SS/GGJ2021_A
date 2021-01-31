@@ -5,10 +5,15 @@ public class SceneMover : MonoBehaviour
 {
     [SerializeField] private string sceneName;
     
+    SoundManager sm;
+    public void Start()
+    {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
     public void ButtonClicked()
     {
         SceneManager.LoadScene(sceneName);
-        Debug.Log("aaa");
+        sm.SEPlay("決定、ボタン押下32");
     }
  
 }
