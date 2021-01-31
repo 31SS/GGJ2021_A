@@ -11,6 +11,7 @@
         <e p="a-takagi" t="Include">
           <e p="Scripts" t="Include">
             <e p="DoorController.cs" t="Include" />
+            <e p="LadarController.cs" t="Include" />
             <e p="MainBodyAnimation.cs" t="Include" />
             <e p="PartsController.cs" t="Include" />
           </e>
@@ -827,6 +828,8 @@
             <e p="CreditScripts.cs" t="Include" />
             <e p="GameClearScripts.cs" t="Include" />
             <e p="GameOver1Scripts.cs" t="Include" />
+            <e p="SingletonMonoBehavior.cs" t="Include" />
+            <e p="SoundManager.cs" t="Include" />
             <e p="titleScripts.cs" t="Include" />
           </e>
         </e>
