@@ -33,7 +33,7 @@ public class TimeCounter : MonoBehaviour
             timeText.text = "朝になりました";
 
             //GameOverのリザルト画面へ
-            //SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
