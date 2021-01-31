@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/K.Isobe/Scenes/Credit.unity
     guid: 6bebffafa80b05f48b2cc120d3eec17a
+  - enabled: 1
+    path: Assets/a-takagi/a-takagiNextScene.unity
+    guid: 34f47750b2a8dc44b9ea3091ff2df9ce
   m_configObjects: {}
