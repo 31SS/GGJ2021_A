@@ -9,5 +9,4 @@ public class PlayerParameter : ScriptableObject
     public float LOWJUMP_POWER;
     public float JUMP_POWER;
     public float HIGHJUMP_POWER;
-    
 }

@@ -11,6 +11,7 @@
         <e p="a-takagi" t="Include">
           <e p="Scripts" t="Include">
             <e p="DoorController.cs" t="Include" />
+            <e p="MainBodyAnimation.cs" t="Include" />
             <e p="PartsController.cs" t="Include" />
           </e>
         </e>
@@ -1136,6 +1137,7 @@
             <e p="Player" t="Include">
               <e p="BodyNumber.cs" t="Include" />
               <e p="PCharacterState.cs" t="Include" />
+              <e p="PickedupHair.cs" t="Include" />
               <e p="PickedupHead.cs" t="Include" />
               <e p="PickedupLeftEye.cs" t="Include" />
               <e p="PickedUpLeftHand.cs" t="Include" />
@@ -1151,6 +1153,7 @@
         <e p="takano" t="Include">
           <e p="Script" t="Include">
             <e p="CameraPosition.cs" t="Include" />
+            <e p="ClearScene.cs" t="Include" />
             <e p="GameMenu.cs" t="Include" />
             <e p="PartManager.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />

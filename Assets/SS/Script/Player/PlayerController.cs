@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         if (isFocus)
         {
             var _x = Input.GetAxis("Horizontal");
-            var _jump = Input.GetButton("Jump");
+            var _jump = Input.GetButtonDown("Jump");
             // m_animator.SetFloat("Horizontal", move);
             // m_animator.SetFloat("Vertical", m_rigidbody2D.velocity.y);
             // m_animator.SetBool("isGround", m_isGround);
