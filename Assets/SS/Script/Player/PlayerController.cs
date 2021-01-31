@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public bool isHair = false;
     public bool isLeg = false;
 
+    //SoundManager
+    SoundManager sm;
+
     private bool moveableFlag;
     private bool  highMoveableFlag;
     private bool  openableDoorFlag;
@@ -78,6 +81,8 @@ public class PlayerController : MonoBehaviour
         {
             part.SetActive(false);
         }
+
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>(); //名前でSoundManagerを探す
     }
 
     private void Update()
@@ -188,10 +193,13 @@ public class PlayerController : MonoBehaviour
                     if (highMoveableFlag)
                     {
                         m_rigidbody2D.AddForce(Vector2.up * playerParameter.HIGHJUMP_POWER);
+                        sm.SEPlay("se_maoudamashii_se_fall02");
                     }
                     else
                     {
                         m_rigidbody2D.AddForce(Vector2.up * playerParameter.JUMP_POWER);
+                        sm.SEPlay("se_maoudamashii_se_fall02");
+
                     }
 
                     StateProcessor.State.Value = StateAir;
@@ -218,6 +226,8 @@ public class PlayerController : MonoBehaviour
                 {
                     // m_animator.SetTrigger("Jump");
                     m_rigidbody2D.AddForce(Vector2.up * playerParameter.LOWJUMP_POWER);
+                    sm.SEPlay("se_maoudamashii_se_fall02");
+
                     StateProcessor.State.Value = StateAir;
                 }
 
