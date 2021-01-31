@@ -27,6 +27,9 @@ public class MainBodyAnimation : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         pc = GetComponent<PlayerController>();
+
+        //当たり判定　服の位置
+        //GetComponent<BoxCollider2D>().Offset.y = -2.5;
     }
 
     // Update is called once per frame
