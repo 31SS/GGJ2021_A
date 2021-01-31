@@ -27,7 +27,7 @@ public class TimeCounter : MonoBehaviour
             time = 0f;
         }
         //時間表示
-        timeText.text ="朝まであと:"+minute.ToString("") + "時間";
+        timeText.text =minute.ToString("") + " hours until sunrize";
         if (minute <= 0f)
         {
             timeText.text = "朝になりました";
