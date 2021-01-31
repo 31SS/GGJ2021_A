@@ -12,8 +12,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/SceneTransition/QuitGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SS/Interface/IPickupable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/PickedupLeftEye.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SS/Script/SceneTransition/SceneMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SS/Script/Player/BodyNumber.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -43,6 +45,8 @@
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/FallSpeedController.cs" />
         <option value="$PROJECT_DIR$/Assets/SS/Script/Player/PlayerParameter.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/SceneTransition/SceneMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/SS/Script/SceneTransition/QuitGame.cs" />
       </list>
     </option>
   </component>
@@ -94,7 +98,7 @@
       <workItem from="1611942720764" duration="4183000" />
       <workItem from="1611968370325" duration="10597000" />
       <workItem from="1611987994259" duration="12279000" />
-      <workItem from="1612058130966" duration="4668000" />
+      <workItem from="1612058130966" duration="6657000" />
     </task>
     <servers />
   </component>
